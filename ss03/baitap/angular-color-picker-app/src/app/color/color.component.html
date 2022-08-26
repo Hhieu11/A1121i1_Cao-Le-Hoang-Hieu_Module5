@@ -1,0 +1,12 @@
+<!--<input [(ngModel)]="color" />-->
+
+<button (click)="red($event.target.value)"> Red</button>
+<button (click)="blue($event.target.value)"> blue</button>
+<button (click)="yellow($event.target.value)"> yellow</button>
+<button (click)="green($event.target.value)"> green</button>
+<button (click)="pink($event.target.value)"> pink</button>
+<br>
+<br>
+<div [ngStyle]="{'color': color}">Change my color</div>
+
+

@@ -1,0 +1,158 @@
+<h3>STUDENT LIST</h3>
+<table class="table table-striped table-hover  ">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Mark</th>
+    <th>Image</th>
+
+    <th colspan="2" class="text-center"> Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let stu of student">
+    <td>{{stu.id}}</td>
+    <td>{{stu.name}}</td>
+    <td>{{stu.mark}}</td>
+<!--    <td>{{stu.image}}</td>-->
+    <td class="text-center" >
+
+      <a  class=" btn btn-danger mx-3"   (click)="openPopup()">Delete </a>|
+
+      <a class="btn btn-warning mx-3" [(ngModel)]="stu.id"  (click)="openPopupDetail(stu.id)" > Detail
+
+        </a>
+
+
+
+    </td>
+
+  </tr>
+  </tbody>
+</table>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Xoa hoc sinh</h4>
+      </div>
+      <div class="modal-body">
+        <p>Ban co muon xoa hoc sinh nay?</p>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"
+                (click)="deleteStudent()">
+         Delete
+        </button>
+
+        <button type="button" class="btn btn-danger"
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Detail  2-->
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle1}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">INFO</h4>
+      </div>
+      <div class="modal-body" style="text-align: center">
+        <div>
+          <img [src]="_stu.image" alt="avatar" style="width: 150px;height: 150px"></div>
+
+      </div>
+      <div style="text-align: center">
+       <p> Id : {{_stu.id}}</p>
+       <p>Name : {{_stu.name}}</p>
+       <p>Mark : {{_stu.mark}}</p>
+      </div>
+      <div class="modal-footer">
+
+
+        <button type="button" class="btn btn-danger"
+                (click)="  closePopupEdit()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--Detail  2-->
+<!--<ng-template #contentDetails>-->
+<!--<div-->
+<!--class="modal"-->
+<!--tabindex="-1"-->
+<!--role="dialog"-->
+<!--[ngStyle]="{'display':displayStyle1}">-->
+<!--<div class="modal-dialog" role="document">-->
+<!--  <div class="modal-content">-->
+<!--    <div class="modal-header">-->
+<!--      <h4 class="modal-title">hoc sinh</h4>-->
+<!--    </div>-->
+<!--    <div class="modal-body">-->
+<!--      <form>-->
+<!--        <div class="form-group">-->
+<!--          <label >Id</label>-->
+<!--          <div class="input-group">-->
+<!--            <input id="sid" class="form-control">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label>Name</label>-->
+<!--          <div class="input-group">-->
+<!--            <input id="sname" class="form-control">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label >Mark</label>-->
+<!--          <div class="input-group">-->
+<!--            <input id="smark" class="form-control">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label>Emage</label>-->
+<!--          <div class="input-group">-->
+<!--            <input id="semage" class="form-control">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+
+<!--    </div>-->
+<!--    <div class="modal-footer">-->
+
+<!--      <button type="button" class="btn btn-danger"-->
+<!--              (click)="closePopupEdit()">-->
+<!--        Close-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</ng-template>-->
+
+
+
+

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "angular-change-font-size": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-change-font-size"
+    }
+  },
+  "defaultProject": "angular-change-font-size",
+  "cli": {
+    "analytics": "28d5a03e-a975-41fc-a8e2-8ed504ca9f79"
+  }
 }

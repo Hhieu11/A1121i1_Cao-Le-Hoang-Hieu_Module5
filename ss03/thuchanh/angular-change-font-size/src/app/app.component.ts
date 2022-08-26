@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-change-font-size';
+  fontSize = 14;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  changeFontSizeValue(fontSize) {
+    this.fontSize = fontSize;
+
+  }
 }
