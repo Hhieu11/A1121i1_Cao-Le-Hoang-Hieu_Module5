@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table table-success table-striped">
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th>Country</th>
+      <th>Gender</th>
+      <th>Password</th>
+      <th>Phone</th>
+    </tr>
+    <tr *ngFor="let item of user;let i = index">
+      <td>{{i+1}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.country}}</td>
+      <td>{{item.gender}}</td>
+      <td>{{item.pass.password}}</td>
+      <td>{{item.phone}}</td>
+    </tr>
+  </table>
+</div>
+<app-register-component></app-register-component>

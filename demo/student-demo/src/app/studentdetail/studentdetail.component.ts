@@ -9,6 +9,7 @@ import {StudentDao} from '../data/StudentDao';
 })
 export class StudentdetailComponent implements OnInit {
   student: IStudent[]=StudentDao.getAllList();
+  student1:IStudent;
   _contentDetails: any;
   _stu: IStudent=new class implements IStudent {
     id: number;
@@ -65,6 +66,16 @@ export class StudentdetailComponent implements OnInit {
     this._stu.name=this.student[id].name;
     this._stu.mark=this.student[id].mark;
     this._stu.image=this.student[id].image;
+
+  }
+
+  getStudent(item: IStudent) {
+    this.student1=item;
+
+  }
+
+  markHandler($event: number) {
+  this.student1[this.student1.mark];
 
   }
 }

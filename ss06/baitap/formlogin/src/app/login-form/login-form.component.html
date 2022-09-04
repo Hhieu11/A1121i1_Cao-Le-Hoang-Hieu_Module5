@@ -1,0 +1,24 @@
+<h3>LOGIN PAGE</h3>
+<form [formGroup]="formlogin" (ngSubmit)="login()" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+  <div *ngIf="!formlogin.get('email')?.valid&&formlogin.get('email')?.touched">
+    <p class="text-danger">Vui long nhap lai email</p>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+    <div *ngIf="!formlogin.get('password')?.valid &&formlogin.get('password')?.touched">
+      <p>Nhập lại password</p>
+
+    </div>
+  </div>
+
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

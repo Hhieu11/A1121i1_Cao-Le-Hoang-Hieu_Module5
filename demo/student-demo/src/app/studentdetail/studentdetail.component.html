@@ -5,9 +5,7 @@
     <th>Id</th>
     <th>Name</th>
     <th>Mark</th>
-    <th>Image</th>
-
-    <th colspan="2" class="text-center"> Action</th>
+    <th class="text-center"> Action</th>
   </tr>
   </thead>
   <tbody>
@@ -15,19 +13,13 @@
     <td>{{stu.id}}</td>
     <td>{{stu.name}}</td>
     <td>{{stu.mark}}</td>
-<!--    <td>{{stu.image}}</td>-->
-    <td class="text-center" >
-
-      <a  class=" btn btn-danger mx-3"   (click)="openPopup()">Delete </a>|
-
-      <a class="btn btn-warning mx-3" [(ngModel)]="stu.id"  (click)="openPopupDetail(stu.id)" > Detail
-
-        </a>
-
-
-
+    <!--    <td>{{stu.image}}</td>-->
+    <td class="text-center">
+      <a class=" btn btn-danger mx-3" (click)="openPopup()">Delete </a>|
+      <a class="btn btn-warning mx-3" (click)="openPopupDetail(stu.id)"> Detail
+      </a>
+      <a> <button type="button" (click)="getStudent(stu)">chi tiet</button></a>
     </td>
-
   </tr>
   </tbody>
 </table>
@@ -50,7 +42,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-danger"
                 (click)="deleteStudent()">
-         Delete
+          Delete
         </button>
 
         <button type="button" class="btn btn-danger"
@@ -77,13 +69,13 @@
       </div>
       <div class="modal-body" style="text-align: center">
         <div>
-          <img [src]="_stu.image" alt="avatar" style="width: 150px;height: 150px"></div>
+<!--          <img [src]="_stu.image" alt="avatar" style="width: 150px;height: 150px"></div>-->
 
       </div>
       <div style="text-align: center">
-       <p> Id : {{_stu.id}}</p>
-       <p>Name : {{_stu.name}}</p>
-       <p>Mark : {{_stu.mark}}</p>
+        <p> Id : {{_stu.id}}</p>
+        <p>Name : {{_stu.name}}</p>
+        <p>Mark : {{_stu.mark}}</p>
       </div>
       <div class="modal-footer">
 
@@ -96,8 +88,9 @@
     </div>
   </div>
 </div>
-
-
+</div>
+<app-stuent-chitiet [student-detail]="student1" (changeM)="markHandler($event)"></app-stuent-chitiet>
+<app-student-create></app-student-create>
 
 
 <!--Detail  2-->
