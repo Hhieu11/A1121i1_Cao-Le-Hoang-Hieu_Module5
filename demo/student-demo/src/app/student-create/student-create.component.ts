@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {StudentDao} from '../data/StudentDao';
+import {StudentService} from '../service/student.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-student-create',
@@ -10,7 +12,10 @@ import {StudentDao} from '../data/StudentDao';
 export class StudentCreateComponent implements OnInit {
  // @ts-ignore
   studentForm:FormGroup;
-  constructor() { }
+  constructor(private studentService:StudentService,
+              private activatedRoute:ActivatedRoute,
+              private router:Router
+  ) { }
 
   ngOnInit(): void {
     this.studentForm= new FormGroup({
@@ -18,13 +23,17 @@ export class StudentCreateComponent implements OnInit {
       name:new FormControl(),
       image:new FormControl(),
       mark:new FormControl(),
+      date:new FormControl(),
 
     })
 
   }
 
   createStu() {
-    StudentDao.student.push(this.studentForm.value);
-    this.studentForm.reset();
+  const student=this.studentForm.value;
+this.studentService.createStudent(student).subscribe(()=>{
+this.studentForm.reset();
+this.router.navigateByUrl("student-list");
+})
   }
 }

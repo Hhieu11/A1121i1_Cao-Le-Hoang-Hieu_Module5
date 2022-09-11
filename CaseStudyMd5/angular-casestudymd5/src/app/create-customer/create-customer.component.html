@@ -3,43 +3,70 @@
     Create Customer
   </h2>
 </div>
-<form>
-
+<form [formGroup]="formCustomer" (ngSubmit)="createCustomer()" >
   <div class="container">
 
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">Customer</label>
-        <input type="text" class="form-control" id="inputEmail4">
+        <label>Id</label>
+        <input type="text" class="form-control"  formControlName="id">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Customer</label>
-        <input type="text" class="form-control" id="inputPassword4">
+        <label >Name</label>
+        <input type="text" class="form-control"  formControlName="nameCustomer">
       </div>
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">Customer</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="inputAddress2">Customer </label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="">
     </div>
     <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">Customer</label>
-        <input type="text" class="form-control" id="inputCity">
+      <div class="form-group col-md-4">
+        <label>Date</label>
+        <input type="text" class="form-control" formControlName="date">
       </div>
       <div class="form-group col-md-4">
-        <label for="inputState">Customer</label>
-        <select id="inputState" class="form-control">
+        <div>
+          <p>Gender</p>
+          <input type="radio" name="gender" formControlName="gender" value="0">Male
+          <input type="radio" name="gender" formControlName="gender" value="1">Female
+          <input type="radio" name="gender" formControlName="gender" value="2">LGBT
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>idCard</label>
+        <input type="text" class="form-control" formControlName="idCard">
+      </div>
+      <div class="form-group col-md-4">
+        <label >phone</label>
+        <input type="text" class="form-control"  formControlName="phone">
+      </div>
+      <div class="form-group col-md-4">
+        <label >email</label>
+        <input type="text" class="form-control"  formControlName="email">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label >address</label>
+        <input type="text" class="form-control"  formControlName="address">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label >typeCustomer</label>
+        <select class="form-control">
           <option selected>Choose...</option>
-          <option>...</option>
+          <option value="0">Gold</option>
+          <option value="1">Plat</option>
+          <option value="2">Dia</option>
         </select>
       </div>
 
     </div>
 
   </div>
+
+  <button type="submit "  class="btn btn-primary" >Submit</button>
+
+
 </form>
 

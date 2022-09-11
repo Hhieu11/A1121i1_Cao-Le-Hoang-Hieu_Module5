@@ -1,0 +1,88 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "name": "iphone",
+      "price": 12321321,
+      "description": "dep",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 3,
+      "name": "iphone",
+      "price": 12321321,
+      "description": "dep",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 4,
+      "name": "iphone1111112222",
+      "price": 12321321,
+      "description": "dep",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 11,
+      "name": "hieu",
+      "price": 4,
+      "description": "vip",
+      "catelogy": {
+        "id": 1,
+        "nameCate": "SamSung"
+      }
+    },
+    {
+      "id": 112,
+      "name": "112",
+      "price": 1,
+      "description": "1",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 1111,
+      "name": "123213",
+      "price": 1,
+      "description": "12123",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 111,
+      "name": "232323",
+      "price": 213,
+      "description": "hieucao151@gmail.com",
+      "catelogy": {
+        "id": 1,
+        "nameCate": "SamSung"
+      }
+    }
+  ],
+  "catelogy": [
+    {
+      "id": 1,
+      "nameCate": "SamSung"
+    },
+    {
+      "id": 2,
+      "nameCate": "Apple"
+    },
+    {
+      "id": 3,
+      "nameCate": "Xiaomi"
+    }
+  ]
+}

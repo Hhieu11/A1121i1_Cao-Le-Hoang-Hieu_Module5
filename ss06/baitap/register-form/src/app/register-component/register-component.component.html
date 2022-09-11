@@ -12,7 +12,7 @@
         <p>Email is required</p>
       </div>
     </div>
-
+  <div formGroupName="pass">
     <div class="form-group">
       <label for="exampleInputPassword">Password</label>
       <input type="text" class="form-control" id="exampleInputPassword" aria-describedby="emailHelp" formControlName="password">
@@ -20,11 +20,11 @@
     <div class="form-group">
       <label for="exampleInputConfirm">Confirm</label>
       <input type="email" class="form-control" id="exampleInputConfirm" aria-describedby="emailHelp" formControlName="confirmPass">
-      <div *ngif="users.hasError('passwordnotmatch',['pass'])&&users.get('pass').touched">
+      <div *ngIf="users.hasError('passwordnotmatch',['pass'])&&users.get('pass').touched">
         <p class="text-danger">Password not match</p>
-
       </div>
     </div>
+  </div>
     <div class="form-group">
       <label for="exampleInputCountry">Country</label>
       <input type="email" class="form-control" id="exampleInputCountry" aria-describedby="emailHelp" formControlName="country">

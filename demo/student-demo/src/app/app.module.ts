@@ -7,19 +7,27 @@ import { StudentdetailComponent } from './studentdetail/studentdetail.component'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { StuentChitietComponent } from './stuent-chitiet/stuent-chitiet.component';
 import { StudentCreateComponent } from './student-create/student-create.component';
+import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentdetailComponent,
     StuentChitietComponent,
-    StudentCreateComponent
+    StudentCreateComponent,
+    UpdateStudentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

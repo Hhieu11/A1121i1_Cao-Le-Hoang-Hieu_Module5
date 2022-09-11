@@ -13,6 +13,12 @@ import { CreateServiceComponent } from './create-service/create-service.componen
 import { ListCustomerComponent } from './list-customer/list-customer.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
+import { ContractComponent } from './contract/contract.component';
+import { ContractListComponent } from './contract-list/contract-list.component';
+import {RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+// import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -25,12 +31,19 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
     CreateServiceComponent,
     ListCustomerComponent,
     EditCustomerComponent,
-    CreateCustomerComponent
+    CreateCustomerComponent,
+    ContractComponent,
+    ContractListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+      FormsModule,
+        ReactiveFormsModule,
+      RouterModule,
+      HttpClientModule,
+      // NgxPaginationModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

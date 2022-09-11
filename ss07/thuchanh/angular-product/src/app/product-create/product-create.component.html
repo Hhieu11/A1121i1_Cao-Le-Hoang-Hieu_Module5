@@ -1,0 +1,67 @@
+<h1>Tạo sản phẩm mới</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Mã sản phẩm:</td>
+      <td><input type="number" formControlName="id"></td>
+      <div *ngIf="!productForm.controls.id?.valid&&(productForm.controls.id?.dirty||productForm.controls.id?.touched)">
+        <p class="text-danger">khong duoc de trong</p>
+      </div>
+    </tr>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+      <div *ngIf="!productForm.controls.name?.valid&&(productForm.controls.name?.dirty||productForm.controls.name?.touched)">
+        <div [hidden]="!productForm.errors.required">
+          <p> kh dc de trong</p>
+
+        </div>
+        <div [hidden]="!productForm.errors.minLength">
+          <p> qua ngan</p>
+
+        </div>
+      </div>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+      <div *ngIf="!productForm.controls.price?.valid&&(productForm.controls.price?.dirty||productForm.controls.price?.touched)">
+        <div [hidden]="!productForm.errors.required">
+          <p> kh dc de trong</p>
+
+        </div>
+        <div [hidden]="!productForm.errors.maxLength">
+          <p> qua dai</p>
+
+        </div>
+      </div>
+    </tr>
+    <tr>
+      <td>Mô tả về sản phẩm</td>
+      <td><input type="text" formControlName="description"></td>
+      <div *ngIf="!productForm.controls.description?.valid&&(productForm.controls.description?.dirty||productForm.controls.description?.touched)">
+        <div [hidden]="!productForm.errors.required">
+          <p> kh dc de trong</p>
+
+        </div>
+        <div [hidden]="!productForm.errors.pattern">
+          <p> qua dai</p>
+
+        </div>
+      </div>
+    </tr>
+    <tr>
+    <tr>
+      <td>Danh mục sản phẩm</td>
+      <td><select formControlName="catelogy">
+        <option *ngFor="let c of cate" [ngValue]="c" >{{c.nameCate}}</option>
+      </select></td>
+    <div *ngIf="!productForm.controls.catelogy?.valid&&(productForm.controls.catelogy?.dirty||productForm.controls.catelogy?.touched)">
+      <p class="text-danger">khong duoc de trong</p>
+    </div>
+    </tr>
+      <td></td>
+      <td><button>Tạo mới</button></td>
+
+  </table>
+</form>

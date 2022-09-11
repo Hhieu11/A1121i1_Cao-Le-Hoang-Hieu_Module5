@@ -20,7 +20,7 @@ pass:new FormGroup({
 },this.comparePass),
   country:new FormControl("",[Validators.required]),
   gender:new FormControl('',[Validators.required]),
-  phone:new FormControl('',[Validators.required,Validators.pattern("^\\+84\\d{9,10}$")]),
+  phone:new FormControl('',[Validators.required ]),
 })
   }
   comparePass(c:AbstractControl){

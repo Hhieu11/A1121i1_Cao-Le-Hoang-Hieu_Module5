@@ -1,0 +1,8 @@
+<p>update-todo </p>
+<div>
+<form [formGroup]="todoForm" (ngSubmit)="updateTodo(id)">
+<input type="text" formGroupName="content">
+<button type="submit"> submit</button>
+
+</form>
+</div>

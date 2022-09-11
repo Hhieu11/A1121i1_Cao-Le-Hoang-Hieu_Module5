@@ -1,6 +1,8 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
 import {IStudent} from '../istudent';
 import {StudentDao} from '../data/StudentDao';
+import {StudentService} from '../service/student.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-studentdetail',
@@ -8,74 +10,40 @@ import {StudentDao} from '../data/StudentDao';
   styleUrls: ['./studentdetail.component.css']
 })
 export class StudentdetailComponent implements OnInit {
-  student: IStudent[]=StudentDao.getAllList();
-  student1:IStudent;
-  _contentDetails: any;
-  _stu: IStudent=new class implements IStudent {
-    id: number;
-    image: string;
-    mark: number;
-    name: string;
+  studentDele: IStudent = {};
+  student1: IStudent[] = [];
+  id:number;
+  p:number=1;
+
+
+  constructor(private studentService: StudentService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router
+  ) {
   }
-  constructor() { }
-  displayStyle = "none";
-  displayStyle1 = "none";
 
   ngOnInit(): void {
+    this.getAll();
   }
 
-  // getMark(value: any) {
-  //   this.student.mark = value;
+  getAll() {
+    this.studentService.getAll().subscribe((data) => {
+      this.student1 = data;
+
+    })
+  }
+
+  // markHandler($event: number) {
+  // this.student1[this.student1.mark];
   //
   // }
-  openPopup() {
-    this.displayStyle="block";
-
-
+  sendProductToDelete(student: IStudent) {
+    this.studentDele = student;
   }
 
-  closePopup() {
-    this.displayStyle="none"
-
-  }
-
-  deleteStudent() {
-    this.student.pop();
-  }
-
-  // openPopupDetail( stu: IStudent) {
-  //   this.displayStyle1="block";
-  //   document.getElementById('sid').setAttribute('value', String(stu.id));
-  //   document.getElementById('sname').setAttribute('value', stu.name);
-  //   document.getElementById('smark').setAttribute('value', String(stu.mark));
-  //   document.getElementById('simage').setAttribute('value', stu.image);
-  // }
-
-  closePopupEdit() {
-    this.displayStyle1="none"
-  }
-
-
-  openDetail() {
-    this.displayStyle1="block";
-  }
-
-  openPopupDetail(id: number) {
-    this.displayStyle1="block";
-    this._stu.id=id;
-    this._stu.name=this.student[id].name;
-    this._stu.mark=this.student[id].mark;
-    this._stu.image=this.student[id].image;
-
-  }
-
-  getStudent(item: IStudent) {
-    this.student1=item;
-
-  }
-
-  markHandler($event: number) {
-  this.student1[this.student1.mark];
-
+  delete() {
+    this.studentService.deteteStudent(this.studentDele.id).subscribe(() => {
+      this.ngOnInit();
+    });
   }
 }

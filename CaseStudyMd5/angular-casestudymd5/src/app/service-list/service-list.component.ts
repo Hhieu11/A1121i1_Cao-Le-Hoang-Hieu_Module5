@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Facility} from '../facility';
+import {ServiceDao} from '../Dao/ServiceDao';
 
 @Component({
   selector: 'app-service-list',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-list.component.css']
 })
 export class ServiceListComponent implements OnInit {
-
+  faciliti:Facility[]=ServiceDao.getAllListService();
   constructor() { }
 
   ngOnInit(): void {
