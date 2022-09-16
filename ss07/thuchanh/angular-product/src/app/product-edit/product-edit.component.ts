@@ -17,21 +17,25 @@ export class ProductEditComponent implements OnInit {
   cate:Catelogy[]=[];
   product:Product;
 
+
   constructor(private serviceProduct:ServiceService,
               private activatedRoute:ActivatedRoute,
               private serviceCatelogy:CatelogyService,
               private router:Router) {
     this.getAllCate();
-    this.activatedRoute.paramMap.subscribe((paramMap:ParamMap)=>{
-      this.id=+paramMap.get('id');
-      this.getProduct(this.id);
-      // this.productForm=new FormGroup({
-      //   id: new FormControl(product.id),
-      //   name: new FormControl(product.name),
-      //   price: new FormControl(product.price),
-      //   description: new FormControl(product.description),
-      // });
-    });
+    this.id = this.activatedRoute.snapshot.params.id;
+    this.getProduct(this.id);
+    // this.activatedRoute.paramMap.subscribe((paramMap:ParamMap)=>{
+    //   this.id = this.activatedRoute.snapshot.params.id;
+    //   // this.id=+paramMap.get('id');
+    //
+    //   // this.productForm=new FormGroup({
+    //   //   id: new FormControl(product.id),
+    //   //   name: new FormControl(product.name),
+    //   //   price: new FormControl(product.price),
+    //   //   description: new FormControl(product.description),
+    //   // });
+    // });
   }
 
   ngOnInit(): void {
@@ -50,7 +54,7 @@ export class ProductEditComponent implements OnInit {
           name: new FormControl(product.name),
           price: new FormControl(product.price),
           description: new FormControl(product.description),
-          catelogy:new FormControl(product.catelogy.nameCate)
+          catelogy:new FormControl(product.catelogy)
       })
     });
   }
@@ -68,5 +72,13 @@ export class ProductEditComponent implements OnInit {
       }
     );
 
+  }
+  // compareObjects(o1: any, o2: any) {
+  //   if(o1.nameCate == o2.nameCate && o1.id == o2.id )
+  //     return true;
+  //   else return false
+  // }
+  compareFn(c1: Catelogy, c2: Catelogy): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
   }
 }

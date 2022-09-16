@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ServiceService} from "../service/service.service";
 import {Product} from "../model/product";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Catelogy} from "../model/catelogy";
 import {CatelogyService} from "../service/catelogy.service";
 
@@ -22,12 +22,19 @@ export class ProductListComponent implements OnInit {
   formDelete:FormGroup;
   id:number;
   p: number=1;
+  searchForm:FormGroup;
 
   constructor( private productService:ServiceService,
               private activatedRoute:ActivatedRoute,
               private router:Router,
-               private catelogyService:CatelogyService) {
+               private catelogyService:CatelogyService,
+               private fb: FormBuilder) {
     this.getAllCate();
+    this.searchForm = this.fb.group({
+      name: '',
+      categoryId: ''
+
+    })
 
     // this.activatedRoute.paramMap.subscribe((paramMap:ParamMap)=>{
     //   this.id=+paramMap.get('id');
@@ -68,9 +75,16 @@ export class ProductListComponent implements OnInit {
   searchName(name:string){
 this.productService.search(name).subscribe((data)=>{
 this.products=data;
+this.p=1;
 
 })
   }
 
+
+  search2() {
+    // const check = this.searchForm.value;
+    this.productService.search2(this.searchForm.get('name').value,this.searchForm.get('categoryId').value).subscribe(products => this.products = products);
+
+  }
 
 }

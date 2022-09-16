@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import {RouterModule} from "@angular/router";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
@@ -22,14 +22,15 @@ import {NgxPaginationModule} from "ngx-pagination";
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgxPaginationModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgxPaginationModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

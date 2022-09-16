@@ -18,9 +18,17 @@
       <td><input type="text" formControlName="description"></td>
     </tr><tr>
       <td>Danh muc</td>
-    <td><select  formControlName="catelogy">
-      <option *ngFor="let c of cate" [ngValue]="c" >{{c.nameCate}}</option>
-    </select></td>
+    <td>
+<!--      <select  formControlName="catelogy">-->
+<!--      <option *ngFor="let c of cate" [ngValue]="c"  >{{c.nameCate}}</option>-->
+<!--    </select>-->
+
+      <select [compareWith]="compareFn" class="form-control " formControlName="catelogy">
+        <ng-container>
+          <option  *ngFor="let c of cate" [ngValue]="c">{{c.nameCate}}</option>
+        </ng-container>
+      </select>
+    </td>
     </tr>
     <tr>
       <td></td>

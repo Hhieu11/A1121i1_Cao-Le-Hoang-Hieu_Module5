@@ -32,5 +32,16 @@ export class CustomerService {
     return this.http.delete<Customer>(this.API_URL+'/'+id);
   }
 
+  searchName(nameCustomer:string):Observable<Customer[]>{
+    return this.http.get<Customer[]>(this.API_URL+'?nameCustomer_like='+nameCustomer);
+  }
+
+
+
+  search2(nameCustomer:string):Observable<Customer[]>{
+    return this.http.get<Customer[]>(`${this.API_URL}?nameCustomer_like=${nameCustomer}`);
+  }
+
+
   constructor( private http:HttpClient) { }
 }

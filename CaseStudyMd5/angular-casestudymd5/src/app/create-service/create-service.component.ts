@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ServiceDao} from '../Dao/ServiceDao';
 import {Router} from '@angular/router';
 
@@ -17,17 +17,17 @@ export class CreateServiceComponent implements OnInit {
 
   ngOnInit(): void {
   this.serviceForm=new FormGroup({
-    facilityId:new FormControl(),
-    facilityName:new FormControl(),
-    area:new FormControl(),
-    cost:new FormControl(),
-    maxPeople:new FormControl(),
-    standardRoom:new FormControl(),
-    description:new FormControl(),
-    poolArea:new FormControl(),
-    numberOfFloors:new FormControl(),
-    rentType:new FormControl(),
-    facilityType: new FormControl(),
+    facilityId:new FormControl('',[Validators.required]),
+    facilityName:new FormControl('',[Validators.required]),
+    area:new FormControl('',[Validators.required]),
+    cost:new FormControl('',[Validators.required]),
+    maxPeople:new FormControl('',[Validators.required]),
+    standardRoom:new FormControl('',[Validators.required]),
+    description:new FormControl('',[Validators.required]),
+    poolArea:new FormControl('',[Validators.required]),
+    numberOfFloors:new FormControl('',[Validators.required]),
+    rentType:new FormControl('',[Validators.required]),
+    facilityType: new FormControl('',[Validators.required]),
   })
   }
 
@@ -38,4 +38,5 @@ export class CreateServiceComponent implements OnInit {
     console.log(this.serviceForm.value);
     this.router.navigateByUrl("service-list")
   }
+
 }

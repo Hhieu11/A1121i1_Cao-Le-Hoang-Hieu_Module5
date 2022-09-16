@@ -1,0 +1,34 @@
+<div class="container">
+  <form [formGroup]="studentForm" (ngSubmit)="updateStudent(id)" >
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Id</label>
+        <input type="text" class="form-control" formControlName="id" >
+      </div>
+      <div class="form-group col-md-6">
+        <label>Name</label>
+        <input type="text" class="form-control" formControlName="name" >
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Age</label>
+        <input type="text" class="form-control"formControlName="age" >
+      </div>
+      <div class="form-group col-md-6">
+        <label>Mark</label>
+        <input type="text" class="form-control" formControlName="mark">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputState">Class</label>
+        <select id="inputState" class="form-control" formControlName="class" [compareWith]="compareFn">
+          <option *ngFor="let c of classN" [ngValue]="c">{{c.class}}</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
+

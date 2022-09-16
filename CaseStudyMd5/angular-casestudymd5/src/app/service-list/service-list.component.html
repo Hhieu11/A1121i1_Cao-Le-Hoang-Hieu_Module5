@@ -19,7 +19,7 @@
 <div class="container">
   <button class="btn btn-outline-dark" style="margin-top: 25px;margin-bottom: auto" [routerLink]="['/create-service']"> Create </button>
   <div class="row m-3 mt-5 gx-2 "> <!-- để set up gutters giữa các columns gx-* horizontal & g-* vertical-->
-    <div class="col-12 col-sm-6 col-md-4 mb-5 " *ngFor="let facility of faciliti">
+    <div class="col-12 col-sm-6 col-md-4 mb-5 " *ngFor="let facility of faciliti|slice: 0 :page*3">
 
       <figure class="snip1321"><img src="https://luvill.asia/wp-content/uploads/2019/08/kien-truc-furama-resort-da-nang-1024x680.jpg" alt="sq-sample26"/>
         <figcaption><i class="ion-upload"></i>
@@ -45,7 +45,9 @@
   </div>
 
 
-
+<div class="w-100 d-flex justify-content-center" *ngIf="page*3 < faciliti.length">
+  <button class="btn btn-primary btnHover btnHover1 " (click)="page=page+1">Load more</button>
+</div>
 
 
 <div class="container">

@@ -1,0 +1,57 @@
+<div class="container">
+<form [formGroup]="studentForm" (ngSubmit)="submit()" >
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Id</label>
+      <input type="text" class="form-control" formControlName="id" >
+      <div *ngIf="!studentForm.controls.id?.valid&&(studentForm.controls.id?.dirty||studentForm.controls.id?.touched)">
+        <p class="text-danger">khong duoc de trong</p>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name" >
+      <div *ngIf="!studentForm.get('name')?.valid && studentForm.get('name')?.dirty">
+        <p class="text-danger">ten kh dung dinh dang</p>
+      </div>
+      <div *ngIf="studentForm.get('name')?.errors?.required && studentForm.get('name')?.touched" class="text-danger">
+        <p>Ten khong duoc trong</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Age</label>
+      <input type="text" class="form-control"formControlName="age" >
+      <div *ngIf="!studentForm.get('age')?.valid && studentForm.get('age')?.dirty">
+        <p class="text-danger">Tuoi phai lon hon hoac bang 18</p>
+      </div>
+      <div *ngIf="studentForm.get('age')?.errors?.required && studentForm.get('age')?.touched" class="text-danger">
+        <p>Tuoi khong duoc trong</p>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Mark</label>
+      <input type="text" class="form-control" formControlName="mark">
+      <div *ngIf="!studentForm.get('mark')?.valid && studentForm.get('mark')?.dirty">
+        <p class="text-danger">Mark khong duoc dai qua 3 ki tu</p>
+      </div>
+      <div *ngIf="studentForm.get('mark')?.errors?.required && studentForm.get('mark')?.touched" class="text-danger">
+        <p>Mark khong duoc trong</p>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputState">Class</label>
+      <select id="inputState" class="form-control" formControlName="class">
+        <option *ngFor="let c of classN" [ngValue]="c">{{c.class}}</option>
+      </select>
+      <div *ngIf="!studentForm.controls.class?.valid&&(studentForm.controls.class?.dirty||studentForm.controls.class?.touched)">
+        <p class="text-danger">khong duoc de trong</p>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary"  [disabled]="!studentForm.valid">Sign in</button>
+</form>
+</div>

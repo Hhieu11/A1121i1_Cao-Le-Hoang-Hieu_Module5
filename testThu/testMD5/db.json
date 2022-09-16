@@ -1,0 +1,54 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "Hieune",
+      "age": 22,
+      "mark": "825",
+      "class": {
+        "id": 1,
+        "class": "a1121i1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Hieu2",
+      "age": 22,
+      "mark": 76,
+      "class": {
+        "id": 2,
+        "class": "a0921i1"
+      }
+    },
+    {
+      "id": "3",
+      "name": "hieu3",
+      "age": "22",
+      "mark": "88",
+      "class": {
+        "id": 2,
+        "class": "a0921i1"
+      }
+    },
+    {
+      "id": "4",
+      "name": "hieu@gmail.com",
+      "age": "22",
+      "mark": "1232",
+      "class": {
+        "id": 1,
+        "class": "a1121i1"
+      }
+    }
+  ],
+  "class": [
+    {
+      "id": 1,
+      "class": "a1121i1"
+    },
+    {
+      "id": 2,
+      "class": "a0921i1"
+    }
+  ]
+}

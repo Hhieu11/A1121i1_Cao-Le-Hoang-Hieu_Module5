@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerService} from '../service/customer.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-edit-customer',
@@ -18,16 +18,16 @@ export class EditCustomerComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((paramMap:ParamMap)=>{
       this.id=+paramMap.get('id');
       this.getCustomer(this.id);
-      // this.formedit=new FormGroup({
-      //   idCustomer: new FormControl(customer.idCustomer),
-      //   nameCustomer: new FormControl(customer.nameCustomer),
-      //   date: new FormControl(customer.date),
-      //   gender: new FormControl(customer.gender),
-      //   idCard: new FormControl(customer.idCard),
-      //   phone: new FormControl(customer.phone),
-      //   email: new FormControl(customer.email),
-      //   typeCustomer: new FormControl(customer.typeCustomer),
-      //   address: new FormControl(customer.address),
+      // this.formEdit=new FormGroup({
+      //   id: new FormControl("",[Validators.required]),
+      //   nameCustomer: new FormControl(),
+      //   date: new FormControl(),
+      //   gender: new FormControl(),
+      //   idCard: new FormControl(),
+      //   phone: new FormControl(),
+      //   email: new FormControl(),
+      //   typeCustomer: new FormControl(),
+      //   address: new FormControl(),
       //
       // });
     });
@@ -39,15 +39,15 @@ export class EditCustomerComponent implements OnInit {
   getCustomer(id:number){
     return this.serviceCustomer.findById(id).subscribe((customer)=>{
       this.formEdit=new FormGroup({
-          id: new FormControl(customer.id),
-          nameCustomer: new FormControl(customer.nameCustomer),
-          date: new FormControl(customer.date),
-          gender: new FormControl(customer.gender),
-          idCard: new FormControl(customer.idCard),
-          phone: new FormControl(customer.phone),
-          email: new FormControl(customer.email),
-          typeCustomer: new FormControl(customer.typeCustomer),
-          address: new FormControl(customer.address),
+          id: new FormControl(customer.id,[Validators.required]),
+          nameCustomer: new FormControl(customer.nameCustomer,[Validators.required, Validators.pattern('([A-Z][a-z]+\\s)+')]),
+          date: new FormControl(customer.date,[Validators.required]),
+          gender: new FormControl(customer.gender,[Validators.required]),
+          idCard: new FormControl(customer.idCard,[Validators.required,Validators.pattern('^\\d{9}$')]),
+          phone: new FormControl(customer.phone,[Validators.required, Validators.pattern('^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[0-9]{7}$')]),
+          email: new FormControl(customer.email,[Validators.required, Validators.pattern("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]),
+          typeCustomer: new FormControl(customer.typeCustomer,[Validators.required]),
+          address: new FormControl(customer.address,[Validators.required]),
 
         })
     });

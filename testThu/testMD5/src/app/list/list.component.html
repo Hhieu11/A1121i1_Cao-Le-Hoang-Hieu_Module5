@@ -1,0 +1,75 @@
+
+<div class="container">
+  <div class="col-md-9">
+    <form [formGroup]="searchForm" (ngSubmit)="search2()">
+      Tên:
+      <input type="text" formControlName="name">
+      Danh mục:
+      <select formControlName="class">
+
+        <option *ngFor="let c of classN" [value]="c.id">{{c .class}}</option>
+      </select>
+      <button type="submit" class="btn btn-outline-dark">Tìm kiếm</button>
+    </form>
+  </div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Mark</th>
+    <th scope="col">Class</th>
+    <th scope="col"> Edit</th>
+    <th scope="col"> Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let stu of student | paginate: { itemsPerPage: 2, currentPage: p }">
+    <th scope="row">{{stu.id}}</th>
+    <td>{{stu.name}}</td>
+    <td>{{stu.age}}</td>
+    <td>{{stu.mark}}</td>
+    <td>{{stu.class.class}}</td>
+    <td><a [routerLink]="['/edit',stu.id]" class="btn btn-outline-warning">Edit</a></td>
+    <td><a data-toggle="modal" data-target="#exam1" class="btn btn-outline-warning" (click)="sendStudentToDelete(stu)"  >Delete</a></td>
+  </tr>
+
+  </tbody>
+</table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<div class="modal fade" id="exam1" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tr>
+            <td>Id:</td>
+            <td>{{deleteStudent.id}}</td>
+          </tr>
+          <tr>
+            <td>Tên:</td>
+            <td>{{deleteStudent.name}}</td>
+          </tr>
+          <tr>
+            <td>Class:</td>
+            <td>{{deleteStudent.class.class}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="delete()">Xoa</button>
+      </div>
+    </div>
+  </div>
+
+</div>

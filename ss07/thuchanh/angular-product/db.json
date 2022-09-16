@@ -6,8 +6,8 @@
       "price": 12321321,
       "description": "dep",
       "catelogy": {
-        "id": 2,
-        "nameCate": "Apple"
+        "id": 1,
+        "nameCate": "SamSung"
       }
     },
     {
@@ -21,33 +21,13 @@
       }
     },
     {
-      "id": 4,
-      "name": "iphone1111112222",
-      "price": 12321321,
-      "description": "dep",
-      "catelogy": {
-        "id": 2,
-        "nameCate": "Apple"
-      }
-    },
-    {
-      "id": 11,
-      "name": "hieu",
-      "price": 4,
-      "description": "vip",
-      "catelogy": {
-        "id": 1,
-        "nameCate": "SamSung"
-      }
-    },
-    {
       "id": 112,
       "name": "112",
       "price": 1,
       "description": "1",
       "catelogy": {
-        "id": 2,
-        "nameCate": "Apple"
+        "id": 3,
+        "nameCate": "Xiaomi"
       }
     },
     {
@@ -56,8 +36,8 @@
       "price": 1,
       "description": "12123",
       "catelogy": {
-        "id": 2,
-        "nameCate": "Apple"
+        "id": 3,
+        "nameCate": "Xiaomi"
       }
     },
     {
@@ -65,6 +45,46 @@
       "name": "232323",
       "price": 213,
       "description": "hieucao151@gmail.com",
+      "catelogy": {
+        "id": 3,
+        "nameCate": "Xiaomi"
+      }
+    },
+    {
+      "id": 123123,
+      "name": "wewewewe",
+      "price": 12313131,
+      "description": "hieucao151@gmail.com",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 112211,
+      "name": "sdasdaddas",
+      "price": 1313213213,
+      "description": "h@gmail.com",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 12312333,
+      "name": "hieuthu1",
+      "price": 121111,
+      "description": "hhh@gmail.com",
+      "catelogy": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 99,
+      "name": "sdsafsafs",
+      "price": "123213213",
+      "description": "hieu@gmail.com",
       "catelogy": {
         "id": 1,
         "nameCate": "SamSung"

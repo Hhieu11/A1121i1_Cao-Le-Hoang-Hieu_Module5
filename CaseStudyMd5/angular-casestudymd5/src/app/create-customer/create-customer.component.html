@@ -10,16 +10,28 @@
       <div class="form-group col-md-6">
         <label>Id</label>
         <input type="text" class="form-control"  formControlName="id">
+        <div *ngIf="!formCustomer.controls.id?.valid&&(formCustomer.controls.id?.dirty||formCustomer.controls.id?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-6">
         <label >Name</label>
         <input type="text" class="form-control"  formControlName="nameCustomer">
+        <div *ngIf="!formCustomer.get('nameCustomer')?.valid && formCustomer.get('nameCustomer')?.touched">
+          <p class="text-danger">Nhap lai ten</p>
+        </div>
+        <div *ngIf="formCustomer.get('nameCustomer')?.errors?.required && formCustomer.get('nameCustomer')?.touched" class="text-danger">
+          <p>Ten khong duoc trong</p>
+        </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label>Date</label>
-        <input type="text" class="form-control" formControlName="date">
+        <input type="date" class="form-control" formControlName="date">
+        <div *ngIf="!formCustomer.controls.date?.valid&&(formCustomer.controls.date?.dirty||formCustomer.controls.date?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
         <div>
@@ -28,32 +40,53 @@
           <input type="radio" name="gender" formControlName="gender" value="1">Female
           <input type="radio" name="gender" formControlName="gender" value="2">LGBT
         </div>
+        <div *ngIf="!formCustomer.controls.gender?.valid&&(formCustomer.controls.gender?.dirty||formCustomer.controls.gender?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label>idCard</label>
+        <label>IdCard</label>
         <input type="text" class="form-control" formControlName="idCard">
+        <div *ngIf="!formCustomer.get('idCard')?.valid && formCustomer.get('idCard')?.touched">
+          <p class="text-danger">Nhap lai IDcard</p>
+        </div>
+        <div *ngIf="formCustomer.get('idCard')?.errors?.required  && formCustomer.get('idCard')?.touched" class="text-danger">
+          <p>IDcard khong duoc trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label >phone</label>
+        <label >Phone</label>
         <input type="text" class="form-control"  formControlName="phone">
+        <div *ngIf="!formCustomer.get('phone')?.valid && formCustomer.get('phone')?.touched">
+          <p class="text-danger">Nhap lai Phone</p>
+        </div>
+        <div *ngIf="formCustomer.get('nameCustomer')?.errors?.required && formCustomer.get('phone')?.touched" class="text-danger">
+          <p>Phone khong duoc trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label >email</label>
+        <label >Email</label>
         <input type="text" class="form-control"  formControlName="email">
+        <div *ngIf="!formCustomer.get('email')?.valid && formCustomer.get('email')?.touched">
+          <p class="text-danger">Nhap lai Email</p>
+        </div>
+        <div *ngIf="formCustomer.get('email')?.errors?.required && formCustomer.get('email')?.touched" class="text-danger">
+          <p>Email khong duoc trong</p>
+        </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label >address</label>
+        <label >Address</label>
         <input type="text" class="form-control"  formControlName="address">
       </div>
 
       <div class="form-group col-md-4">
-        <label >typeCustomer</label>
-        <select class="form-control">
+        <label >Type</label>
+        <select class="form-control" formControlName="typeCustomer">
           <option selected>Choose...</option>
           <option value="0">Gold</option>
           <option value="1">Plat</option>
@@ -62,11 +95,14 @@
       </div>
 
     </div>
+    <button type="submit "  class="btn btn-primary" >Submit</button>
+   <a class="btn btn-outline-info" style="margin-left: 100px ;margin-top: 0px"  (click)="reset()">Reset</a>
 
   </div>
 
-  <button type="submit "  class="btn btn-primary" >Submit</button>
+
 
 
 </form>
+
 

@@ -8,6 +8,8 @@ import {ServiceDao} from '../Dao/ServiceDao';
   styleUrls: ['./service-list.component.css']
 })
 export class ServiceListComponent implements OnInit {
+
+  page: number = 1;
   faciliti:Facility[]=ServiceDao.getAllListService();
   constructor() { }
 

@@ -1,0 +1,118 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "nameProduct": "iphone",
+      "price": 12321321,
+      "description": "dep",
+      "category": {
+        "id": 3,
+        "nameCate": "Xiaomi"
+      }
+    },
+    {
+      "id": 3,
+      "nameProduct": "iphone",
+      "price": 12321321,
+      "description": "dep",
+      "category": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 112,
+      "nameProduct": "112",
+      "price": 1,
+      "description": "1",
+      "category": {
+        "id": 3,
+        "nameCate": "Xiaomi"
+      }
+    },
+    {
+      "id": 1111,
+      "nameProduct": "123213",
+      "price": 1,
+      "description": "12123",
+      "category": {
+        "id": 3,
+        "nameCate": "Xiaomi"
+      }
+    },
+    {
+      "id": 111,
+      "nameProduct": "232323",
+      "price": 213,
+      "description": "hieucao151@gmail.com",
+      "category": {
+        "id": 3,
+        "nameCate": "Xiaomi"
+      }
+    },
+    {
+      "id": 123123,
+      "nameProduct": "wewewewe",
+      "price": 12313131,
+      "description": "hieucao151@gmail.com",
+      "category": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 112211,
+      "nameProduct": "sdasdaddas",
+      "price": 1313213213,
+      "description": "h@gmail.com",
+      "category": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 12312333,
+      "nameProduct": "hieuthu1",
+      "price": 121111,
+      "description": "hhh@gmail.com",
+      "category": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    },
+    {
+      "id": 99,
+      "nameProduct": "sdsafsafs",
+      "price": "123213213",
+      "description": "hieu@gmail.com",
+      "category": {
+        "id": 1,
+        "nameCate": "SamSung"
+      }
+    },
+    {
+      "id": 1231,
+      "nameProduct": "iphone14",
+      "price": "1201022",
+      "description": "hieu@gmail.com",
+      "category": {
+        "id": 2,
+        "nameCate": "Apple"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "nameCate": "SamSung"
+    },
+    {
+      "id": 2,
+      "nameCate": "Apple"
+    },
+    {
+      "id": 3,
+      "nameCate": "Xiaomi"
+    }
+  ]
+}

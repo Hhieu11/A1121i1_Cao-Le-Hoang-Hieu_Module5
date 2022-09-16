@@ -5,11 +5,11 @@
       "nameCustomer": "hieuhheee",
       "date": "11/02/2000",
       "gender": "0",
-      "idCard": 12223111,
-      "phone": 32432424,
+      "idCard": "121323322",
+      "phone": "0901231232",
       "email": "hieu@gmail.com",
-      "typeCustomer": 1,
-      "address": "QN"
+      "typeCustomer": "0",
+      "address": "rr"
     },
     {
       "id": 2,
@@ -30,7 +30,7 @@
       "idCard": 12223111,
       "phone": 32432424,
       "email": "hieu@gmail.com",
-      "typeCustomer": 3,
+      "typeCustomer": 2,
       "address": "QN"
     },
     {
@@ -43,6 +43,95 @@
       "email": "hieu@gmail.com",
       "typeCustomer": 1,
       "address": "QN"
+    },
+    {
+      "id": 5,
+      "nameCustomer": "cao lê hoàng hiếu",
+      "date": "2022-09-01",
+      "gender": "0",
+      "idCard": "123123123",
+      "phone": "0167 715 8805",
+      "email": "hieucao151@gmail.com",
+      "typeCustomer": 2,
+      "address": "11"
+    },
+    {
+      "id": "6",
+      "nameCustomer": "cao lê hoàng hiếu",
+      "date": "2022-09-02",
+      "gender": "0",
+      "idCard": "2222222",
+      "phone": "0167 715 8805",
+      "email": "hieucao151@gmail.com",
+      "typeCustomer": 2,
+      "address": "11"
+    },
+    {
+      "id": "7",
+      "nameCustomer": "cao lê hoàng hiếu",
+      "date": "2022-08-31",
+      "gender": "0",
+      "idCard": "123123123",
+      "phone": "0903123123",
+      "email": "hieucao151@gmail.com",
+      "typeCustomer": "",
+      "address": "11"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "startDay": "2020-12-08",
+      "endDay": "2020-12-08",
+      "deposit": "1",
+      "total": "2000",
+      "customer": {
+        "id": 5,
+        "nameCustomer": "cao lê hoàng hiếu",
+        "date": "2022-09-01",
+        "gender": "0",
+        "idCard": "123123123",
+        "phone": "0167 715 8805",
+        "email": "hieucao151@gmail.com",
+        "typeCustomer": 2,
+        "address": "11"
+      }
+    },
+    {
+      "id": "2",
+      "startDay": "2022-09-02",
+      "endDay": "2022-09-13",
+      "deposit": "112",
+      "total": "100000",
+      "customer": {
+        "id": 3,
+        "nameCustomer": "hieu3",
+        "date": "11/02/2000",
+        "gender": 0,
+        "idCard": 12223111,
+        "phone": 32432424,
+        "email": "hieu@gmail.com",
+        "typeCustomer": 2,
+        "address": "QN"
+      }
+    },
+    {
+      "id": "3",
+      "startDay": "2022-09-11",
+      "endDay": "2022-09-13",
+      "deposit": "123312",
+      "total": "100000",
+      "customer": {
+        "id": 1,
+        "nameCustomer": "hieuhheee",
+        "date": "11/02/2000",
+        "gender": "0",
+        "idCard": "121323322",
+        "phone": "0901231232",
+        "email": "hieu@gmail.com",
+        "typeCustomer": "0",
+        "address": "rr"
+      }
     }
   ]
 }

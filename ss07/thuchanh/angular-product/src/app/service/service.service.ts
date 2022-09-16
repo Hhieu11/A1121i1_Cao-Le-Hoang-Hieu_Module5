@@ -34,6 +34,9 @@ export class ServiceService {
   search(name:string):Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.API_URL+'?name_like='+name);
   }
+  search2(name:string, id: number):Observable<Product[]>{
+    return this.httpClient.get<Product[]>(`${this.API_URL}?name_like=${name}&catelogy.id_like=${id}`);
+  }
 
   constructor(private httpClient:HttpClient) { }
 }

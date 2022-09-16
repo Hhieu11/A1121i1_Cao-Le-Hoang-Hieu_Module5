@@ -10,16 +10,28 @@
       <div class="form-group col-md-6">
         <label>Id</label>
         <input type="text" class="form-control"  formControlName="id">
+        <div *ngIf="!formEdit.controls.id?.valid&&(formEdit.controls.id?.dirty||formEdit.controls.id?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-6">
         <label >Name</label>
         <input type="text" class="form-control"  formControlName="nameCustomer">
+        <div *ngIf="!formEdit.get('nameCustomer')?.valid && formEdit.get('nameCustomer')?.touched">
+          <p class="text-danger">Nhap lai ten</p>
+        </div>
+        <div *ngIf="formEdit.get('nameCustomer')?.errors?.required" class="text-danger">
+          <p>Ten khong duoc trong</p>
+        </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label>Date</label>
-        <input type="text" class="form-control" formControlName="date">
+        <input type="date" class="form-control" formControlName="date">
+        <div *ngIf="!formEdit.controls.date?.valid&&(formEdit.controls.date?.dirty||formEdit.controls.date?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
         <div>
@@ -28,44 +40,72 @@
           <input type="radio" name="gender" formControlName="gender" value="1">Female
           <input type="radio" name="gender" formControlName="gender" value="2">LGBT
         </div>
+        <div *ngIf="!formEdit.controls.gender?.valid&&(formEdit.controls.gender?.dirty||formEdit.controls.gender?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label>idCard</label>
+        <label>IdCard</label>
         <input type="text" class="form-control" formControlName="idCard">
+        <div *ngIf="!formEdit.get('idCard')?.valid && formEdit.get('idCard')?.touched">
+          <p class="text-danger">Nhap lai IDcard</p>
+        </div>
+        <div *ngIf="formEdit.get('idCard')?.errors?.required" class="text-danger">
+          <p>IDcard khong duoc trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label >phone</label>
+        <label >Phone</label>
         <input type="text" class="form-control"  formControlName="phone">
+        <div *ngIf="!formEdit.get('phone')?.valid && formEdit.get('phone')?.touched">
+          <p class="text-danger">Nhap lai Phone</p>
+        </div>
+        <div *ngIf="formEdit.get('nameCustomer')?.errors?.required" class="text-danger">
+          <p>Phone khong duoc trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label >email</label>
+        <label >Email</label>
         <input type="text" class="form-control"  formControlName="email">
+        <div *ngIf="!formEdit.get('email')?.valid && formEdit.get('email')?.touched">
+          <p class="text-danger">Nhap lai Email</p>
+        </div>
+        <div *ngIf="formEdit.get('email')?.errors?.required" class="text-danger">
+          <p>Email khong duoc trong</p>
+        </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label >address</label>
+        <label >Address</label>
         <input type="text" class="form-control"  formControlName="address">
+        <div *ngIf="!formEdit.controls.address?.valid&&(formEdit.controls.address?.dirty||formEdit.controls.address?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
 
       <div class="form-group col-md-4">
-        <label >typeCustomer</label>
-        <select class="form-control">
+        <label >Type</label>
+        <select class="form-control" formControlName="typeCustomer">
           <option selected>Choose...</option>
           <option value="0">Gold</option>
           <option value="1">Plat</option>
           <option value="2">Dia</option>
         </select>
+        <div *ngIf="!formEdit.controls.typeCustomer?.valid&&(formEdit.controls.typeCustomer?.dirty||formEdit.controls.typeCustomer?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
 
     </div>
+    <button type="submit "  class="btn btn-primary" >Update</button>
 
   </div>
 
-  <button type="submit "  class="btn btn-primary" >Update</button>
+
 
 
 </form>

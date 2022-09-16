@@ -11,24 +11,39 @@
       <div class="form-group col-md-6">
         <label>Id</label>
         <input type="text" class="form-control"  formControlName="facilityId">
+        <div *ngIf="!serviceForm.controls.facilityId?.valid&&(serviceForm.controls.facilityId?.dirty||serviceForm.controls.facilityId?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-6">
         <label >Name</label>
         <input type="text" class="form-control"  formControlName="facilityName">
+        <div *ngIf="!serviceForm.controls.facilityName?.valid&&(serviceForm.controls.facilityName?.dirty||serviceForm.controls.facilityName?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label>Area</label>
         <input type="text" class="form-control" formControlName="area">
+        <div *ngIf="!serviceForm.controls.area?.valid&&(serviceForm.controls.area?.dirty||serviceForm.controls.area?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
         <label >Cost</label>
         <input type="text" class="form-control"  formControlName="cost">
+        <div *ngIf="!serviceForm.controls.cost?.valid&&(serviceForm.controls.cost?.dirty||serviceForm.controls.cost?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
         <label >Max People</label>
         <input type="text" class="form-control"  formControlName="maxPeople">
+        <div *ngIf="!serviceForm.controls.maxPeople?.valid&&(serviceForm.controls.maxPeople?.dirty||serviceForm.controls.maxPeople?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
     </div>
 
@@ -36,19 +51,28 @@
       <div class="form-group col-md-4">
         <label>standardRoom</label>
         <input type="text" class="form-control" formControlName="standardRoom">
+        <div *ngIf="!serviceForm.controls.standardRoom?.valid&&(serviceForm.controls.standardRoom?.dirty||serviceForm.controls.standardRoom?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label >description</label>
+        <label >Description</label>
         <input type="text" class="form-control"  formControlName="description">
+        <div *ngIf="!serviceForm.controls.description?.valid&&(serviceForm.controls.description?.dirty||serviceForm.controls.description?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
       <div class="form-group col-md-4">
-        <label >numberOfFloors</label>
+        <label >Number Of Floors</label>
         <input type="number" class="form-control"  formControlName="numberOfFloors">
+        <div *ngIf="!serviceForm.controls.numberOfFloors?.valid&&(serviceForm.controls.numberOfFloors?.dirty||serviceForm.controls.numberOfFloors?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label >rentType</label>
+        <label >Rent Type</label>
         <select  class="form-control">
           <option selected>Choose...</option>
           <option>1</option>
@@ -56,21 +80,31 @@
           <option>3</option>
 
         </select>
+        <div *ngIf="!serviceForm.controls.id?.valid&&(serviceForm.controls.id?.dirty||serviceForm.controls.id?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
 
+
       <div class="form-group col-md-4">
-        <label >facilityType</label>
+        <label >Facility Type</label>
         <select class="form-control">
           <option selected>Choose...</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
         </select>
+        <div *ngIf="!serviceForm.controls.id?.valid&&(serviceForm.controls.id?.dirty||serviceForm.controls.id?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
 
       <div class="form-group col-md-4">
-        <label >Pool area</label>
+        <label >Pool Area</label>
         <input type="number" class="form-control"  formControlName="poolArea">
+        <div *ngIf="!serviceForm.controls.poolArea?.valid&&(serviceForm.controls.poolArea?.dirty||serviceForm.controls.poolArea?.touched)">
+          <p class="text-danger">khong duoc de trong</p>
+        </div>
       </div>
 
 
